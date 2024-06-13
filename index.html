@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          margin:0px;
+          padding:0px;
+          box-sizing: border-box;
+
+        }
+        body{
+            height:100vh;
+            width:100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+        .time{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 180px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 3px 5px grey;
+            background-color: black;
+
+        }
+        .time span{
+            width:100%;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+        }
+        .time span.min{
+            font-size: 30px;
+            border-right: 2px solid grey;
+            border-left: 2px solid grey;
+            pointer-events: none;
+        }
+        .left{
+            width:500px;
+            height: 100px;
+            background-color: black;
+            border-radius: 2px;
+            box-shadow: 4px 2px 4px 3px grey;
+        }
+        .right{
+            display: flex;
+           
+            align-items: center;
+            justify-content: space-around;
+
+            width:450px;
+            height: 100px;
+            background-color: black;
+            border-radius: 2px;
+            box-shadow: 4px 2px 4px 3px grey;
+        }
+        .right span{
+            font-size: 100px;
+            color: white;
+            margin-bottom: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+
+
+    <div class="time">
+        <span class="hour"></span>
+        <span class="min"></span>
+        <span class="sec"></span>
+    </div>
+    <div class="right">
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+    </div>
+
+    <script>
+        function time(){
+            var currentTime=new Date();
+            var h=currentTime.getHours();
+            var m=currentTime.getMinutes();
+            var s=currentTime.getSeconds();
+
+            var hour=document.querySelector(".hour");
+            var min=document.querySelector(".min");
+            var sec=document.querySelector(".sec");
+
+            hour.innerHTML=h;
+            min.innerHTML=m;
+            sec.innerHTML=s;
+        
+        }
+        setInterval(time,1000);
+    </script>
+
+</body>
+</html>
